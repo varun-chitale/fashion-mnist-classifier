@@ -1,0 +1,6 @@
+# I experimented with making all layers trainable and these were the acc results
+# I need more time to understand what would work better with the use-case
+n   accuracy
+100	0.6705
+1000	0.8265
+10000	0.8979
