@@ -22,6 +22,32 @@ pre-trained models is not allowed.
 ---
 
 ## Solution
+
+## Optimization Update:
+
+I had to use only 10% of the data for getting 90% accuracy. That is 6000 samples.
+I decided to use only **5999** ;)
+
+Here are the steps that got the final accuracy of **90.13%**
+
+1. Retraind autoencoder on 200 epochs -> improved embeddings for the images.
+2. Reduced validation sets in both models -> gave more training data.
+3. Changed model arch(layers, #neurons) for the classifier model -> more improvements
+4. Set the initial layers in classifer to trainable -> more improvements
+5. Tweaked #epochs for model two -> no use in wasting time, is there?
+6. Optimised params(batch size, optimizer, activation functions) -> more improvements
+
+Et voila, accuracy threshold reached.
+
+In case the above wouldn't have worked, I would have:
+1. Hand selected samples based on classification report. More samples for shitty classes and vice versa.
+2. Data augmentation: this would've required retraining the autoenc which takes a lot of time.
+3. Replaced the classifier altogether -> also needs time.
+
+Closing thoughts:
+1. This was a fun assignment. More improvements are possiible but they need time, is all.
+
+---
 After some literature review, I narrowed my solution down to this basic workflow:
 1. Identify features from the training data w/o using labels
 2. Use a stacked approach and use minimal labels to classify with the accuracy threshold of 0.9
